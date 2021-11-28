@@ -24,7 +24,7 @@ public class EstudanteService {
 	}
 	
 	
-	public Estudante getEstudanteId(Long idEstudante) {
+	public Estudante getEstudanteId(Integer idEstudante) {
 		return this.estudanteRepository.findById(idEstudante).orElse(null);
 	}
 	
@@ -33,13 +33,13 @@ public class EstudanteService {
 		return estudanteInserido;
 	}
 	
-	public void apagarEstudante(Long idEstudante) {
+	public void apagarEstudante(Integer idEstudante) {
 		this.estudanteRepository.deleteById(idEstudante);
 	}
 	
 
 	
-	public void Calculando_media (Long id) {
+	public void Calculando_media (Integer id) {
 		
 		Estudante estudante = getEstudanteId(id);
 		

@@ -8,20 +8,28 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Enum.Situacao;
 import lombok.EqualsAndHashCode;
 
 
 @Entity
-@Table(name="tb-estudante")
+@Table(name="tb_estudante")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Estudante {
 	@EqualsAndHashCode.Include
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	private String nome; 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String nome;
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@Future(message="Data tem que ser futura")
 	private Date datanascimento;
 	private Integer Faltas;
 	private Situacao situacao;
@@ -40,11 +48,11 @@ public class Estudante {
 		this.datanascimento = datanascimento;
 	}
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
