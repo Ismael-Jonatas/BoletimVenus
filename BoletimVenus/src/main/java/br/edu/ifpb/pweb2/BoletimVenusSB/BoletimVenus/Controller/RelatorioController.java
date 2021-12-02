@@ -9,18 +9,19 @@ import br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Model.Estudante;
 import br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Service.EstudanteService;
 
 @Controller
-@RequestMapping("/cadastro")
+@RequestMapping("/relatorio")
 
-public class CadastroController {
+
+public class RelatorioController {
 
 	@Autowired
 	private EstudanteService estudanteservice;
 	
 	
 	@RequestMapping
-	public String getFromCadastro(Model model) {
+	public String getFromRelatorio(Model model) {
 		model.addAttribute("estudante", new Estudante());
-		return "/cadastro/form-cadastro";
+		return "/relatorio/form-relatorio";
 	}
 	
 	
