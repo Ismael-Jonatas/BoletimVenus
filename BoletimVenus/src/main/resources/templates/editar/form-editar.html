@@ -15,7 +15,7 @@
 
 <!-- formulario -->
 
-<form class="form-cadastraraluno" th:action="@{/cadastro/adicionar}" th:object="${estudante}" method="post"> 
+<form class="form-cadastraraluno"> 
 	
 	<h4> Cadastrando Aluno </h4>
 
@@ -23,26 +23,18 @@
     
 <div class="row"> 
 	<div class="col-md-6 mb-3"> 
-	<label for="estudante"> Nome </label> 
-	<input type="text" th:field="*{nome}" class="form-control"/>		
+	<label for="estudante"> Nome </label> <input type="text" class="form-control"/>		
 	</div>				
 </div>
 
 <div class="row">
 	<div class="col-md-6 mb-3"> 
-	<label for="estudante"> Data Nascimento </label>
-	<input type="text"  th:field="*{dataNascimento}" class="form-control" />
+	<label for="estudante"> Data Nascimento </label> <input type="text" class="form-control" />
 	</div>				
 </div>
 
+  <button type="submit" class="btn btn-primary">Enviar</button>
 
-		<div class="text-center">
-			<a th:href="@{/cadastro/adicionar}">
-				<button class="btn btn-primary">
-					Salvar
-				</button>
-			</a>
-		</div>
 </form>
 
 <!-- formulario -->
