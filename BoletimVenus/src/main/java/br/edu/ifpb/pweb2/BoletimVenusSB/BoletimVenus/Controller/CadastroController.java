@@ -38,7 +38,7 @@ public class CadastroController {
 	}
 	
 	public void CadastroEstudante(Estudante estudante) {
-		Date dataNascimento = (Date) estudante.getDataNascimento();
+		Date dataNascimento = new Date(estudante.getDataNascimento().getTime());
 		String nome = estudante.getNome();
 	}
 }

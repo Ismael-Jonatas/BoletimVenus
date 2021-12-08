@@ -28,7 +28,7 @@ public class Estudante {
 	private Integer id;
 	private String nome;
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 //	@Future(message="Data tem que ser futura")
 	private Date dataNascimento;
 	private Integer faltas;

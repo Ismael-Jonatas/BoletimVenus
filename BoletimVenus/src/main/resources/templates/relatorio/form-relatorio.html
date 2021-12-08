@@ -26,7 +26,7 @@
 			</tr>
 			<tr th:each="estudante : ${estudantes}">
 				<th th:text="${estudante.nome}"></th>
-				<td th:text="${estudante.dataNascimento}"></td>
+				<td th:text="${format.format(estudante.dataNascimento)}"></td>
 				<td th:text="${estudante.faltas == null} ? '-' : ${estudante.faltas}"></td>
 				<td class="text-center" th:text="${estudante.getMedia() == null} ? '-' : ${estudante.getMedia()}"></td>
 				<td class="text-center" th:text="${estudante.notaFinal == null} ? '-' : ${estudante.notaFinal}"></td>

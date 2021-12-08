@@ -11,6 +11,7 @@ import br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Service.EstudanteService;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Controller
@@ -23,6 +24,7 @@ public class RelatorioController {
 	public String getFromRelatorio(Model model) {
 		List<Estudante> estudantes = estudanteservice.getEstudantes();
 		model.addAttribute("estudantes", estudantes);
+		model.addAttribute("format", new SimpleDateFormat("dd/MM/yyyy"));
 		return "/relatorio/form-relatorio";
 	}
 }
