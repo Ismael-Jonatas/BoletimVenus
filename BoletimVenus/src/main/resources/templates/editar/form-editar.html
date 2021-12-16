@@ -13,33 +13,39 @@
 	<header th:replace="~{fragments/header :: header}"></header>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-<!-- formulario -->
+	<form class="form-editar" th:action="@{/editar}" th:object="${estudante}" method="post">
 
-<form class="form-cadastraraluno"> 
-	
-	<h4> Cadastrando Aluno </h4>
+		<div class="form-group">
+			<label for="estudantes">Estudante</label>
+			<select class="form-control" id="estudantes" th:field="*{id}">
+				<option value="Selecione">Selecione</option>
+				<option th:each="estudante : ${estudantes}" th:value="${estudante.id}" th:text="${estudante.nome}"></option>
+			</select>
+		</div>
 
-    <input type="hidden"/>
-    
-<div class="row"> 
-	<div class="col-md-6 mb-3"> 
-	<label for="estudante"> Nome </label> <input type="text" class="form-control"/>		
-	</div>				
-</div>
+		<div class="row">
+			<div class="col-md-6 mb-3">
+				<label class="form-label">Nome</label>
+				<input type="text" class="form-control" th:field="*{nome}"/>
+			</div>
+		</div>
 
-<div class="row">
-	<div class="col-md-6 mb-3"> 
-	<label for="estudante"> Data Nascimento </label> <input type="text" class="form-control" />
-	</div>				
-</div>
+		<div class="row">
+			<div class="col-md-6 mb-3">
+				<label class="form-label">Data de Nascimento</label>
+				<input type="date" class="form-control" th:field="*{dataNascimento}"/>
+			</div>
+		</div>
 
-  <button type="submit" class="btn btn-primary">Enviar</button>
+		<div class="text-center">
+			<a th:href="@{/editar}">
+				<button class="btn btn-primary">
+					Salvar
+				</button>
+			</a>
+		</div>
+	</form>
 
-</form>
-
-<!-- formulario -->
-
-	
-		<footer th:replace="~{fragments/footer :: footer}"></footer>
-	</body>
+	<footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
 </html>

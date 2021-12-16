@@ -21,13 +21,6 @@
 		<input type="hidden" th:field="*{nome}"/>
 		<input type="hidden" th:field="*{dataNascimento}"/>
 
-<!--		<div class="row">-->
-<!--			<div class="col-md-6 mb-3">-->
-<!--				<label for="estudante"> Matricula </label>-->
-<!--				<input type="text" class="form-control"/>-->
-<!--			</div>-->
-<!--		</div>-->
-
 		<div class="row">
 			<div class="col-md-6 mb-3">
 				<label class="form-label">Faltas</label>
@@ -55,9 +48,10 @@
 				<input type="text" th:field="*{nota3}" class="form-control"/>
 			</div>
 		</div>
-
+<!--		th:if="${estudante.getSituacao().getDescricao() == 'FN'}"-->
 		<div class="row">
 			<div class="col-md-6 mb-3">
+				<label class="form-label">Nota Final</label>
 				<label class="form-label">Nota Final</label>
 				<input type="text" th:field="*{notaFinal}" class="form-control"/>
 			</div>
@@ -70,10 +64,8 @@
 				</button>
 			</a>
 		</div>
-
 	</form>
 
-	<!-- formulario -->
 	<footer th:replace="~{fragments/footer :: footer}"></footer>
 </body>
 </html>
