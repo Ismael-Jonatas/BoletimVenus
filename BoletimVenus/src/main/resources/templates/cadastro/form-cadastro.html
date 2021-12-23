@@ -17,31 +17,33 @@
 
 <form class="form-cadastraraluno" th:action="@{/cadastro/adicionar}" th:object="${estudante}" method="post"> 
 	
-	<h4> Cadastrando Aluno </h4>
+	<div class="content-box">
+		<h4> Cadastrando Aluno </h4>
 
-    <input type="hidden"/>
+    	<input type="hidden"/>
     
-	<img th:src="@{/css/Sheyla.png}">    
-    
-	<div class="row"> 
-		<div class="col-md-6 mb-3"> 
-		<label for="estudante"> Nome </label> 
-		<input type="text" th:field="*{nome}" class="form-control"/>		
-		</div>				
-	</div>
+		<div class="row"> 
+			<div class="col-md-6 mb-3"> 
+			<label for="estudante"> Nome </label> 
+			<input type="text" th:field="*{nome}" class="form-control"/>		
+			</div>				
+		</div>
 
-	<div class="row">
-		<div class="col-md-6 mb-3"> 
-		<label for="estudante"> Data Nascimento </label>
-		<input type="date" th:field="*{dataNascimento}" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" class="form-control" />
-		</div>				
+		<div class="row">
+			<div class="col-md-6 mb-3"> 
+			<label for="estudante"> Data Nascimento </label>
+			<input type="date" th:field="*{dataNascimento}" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" class="form-control" />
+			</div>				
+		</div>
+	
+		<div class="text-center">
+			<a th:href="@{/cadastro/adicionar}">
+				<button class="btn btn-primary">Salvar</button>
+			</a>
+		</div>
 	</div>
-
-	<div class="text-center">
-		<a th:href="@{/cadastro/adicionar}">
-			<button class="btn btn-primary">Salvar</button>
-		</a>
-	</div>
+	
+	<img id="sheyla" th:src="@{/images/Sheyla.png}">
 </form>
 
 <!-- formulario -->

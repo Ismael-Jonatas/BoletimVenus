@@ -7,7 +7,6 @@
 body {
 	margin: 0;
 	min-height: 100vh;
-	width: 100vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -21,6 +20,7 @@ header {
 	width: 100%;
 	background-color: #46C3FF;
 	background-color: #A7DDF7;
+	margin-bottom: 50px;
 }
 
 .content {
@@ -34,15 +34,6 @@ header {
 .msg-erro {
 	color:red; 
 	padding-bottom: 20px;
-}
-
-.form-cadastraraluno {
-	display: block;
-    width: 60%;
-    height: 100px;
-    margin-left: 35%;
-    margin-bottom: 10%;
-	
 }
 
 button, .btn btn-primary {
@@ -59,17 +50,7 @@ button, .btn btn-primary {
 
 
 #estudantes {
-	
-	width: 49%
-	
-}
-
-.form-editar {
-	display: block;
-    width: 60%;
-    height: 100px;
-    margin-left: 35%;
-    margin-bottom: 10%;
+	width: 49%	
 }
 
 
@@ -106,29 +87,73 @@ a {
 	
 }
 
-.footer {
-	
-	position: absolute;
+footer {
 	width: 100%;
-	left: 0px;
 	height: 30px;
 	background: #0D86AC;
-	
+	margin-top: 20px;
 }
 
 #direitos {
-		color: rgba(255,255,255);	
-		text-align: center;
-		top: 40%
-
-	
+	color: rgba(255,255,255);	
+	text-align: center;
+	top: 40%;
 }
 
-img {
-	position: absolute;
-	width: 200px;
-	left: 990px;
-	top: 70px;
+.form-cadastraraluno, .form-editar {
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
 
-		
+.content-box {
+	margin-top: 230px;
+	width: 56%;
+	min-width: 290px;
+	max-width: 550px;
+	background-color: #FFF;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 15px;
+	box-shadow:0px 13px 40px #0000001f;
+}
+
+.content-box .row {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.content-box .row * {
+	width: 90%;
+}
+
+.content-box .row input, #estudantes {
+	width: 100%;
+	margin: 0;
+}
+
+#sheyla {
+	width: 200px;
+	position: absolute;
+	z-index: -1;
+}
+
+@media (min-width: 700px) {
+	.form-cadastraraluno, .form-editar {
+		flex-direction: row;
+	}
+	
+	#sheyla {
+		position: unset;
+	}
+	
+	.content-box {
+		margin:unset;
+	}
 }
