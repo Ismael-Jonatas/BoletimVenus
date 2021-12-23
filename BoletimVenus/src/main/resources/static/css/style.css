@@ -12,6 +12,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	background: #BFE0FF;
 	
 }
 
@@ -41,9 +42,21 @@ header {
     height: 100px;
     margin-left: 35%;
     margin-bottom: 10%;
-    color: black;
 	
 }
+
+button, .btn btn-primary {
+	width: 200px;
+    text-align: center;
+    padding: 10px 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    font-size: 18px;
+    right: 20px;
+    left: 50px;
+}
+
+
 
 #estudantes {
 	
@@ -66,7 +79,7 @@ header {
     height: 320px;
     margin-left: 35%;
     margin-bottom: 10%;
-	
+
 }
 
 a {
