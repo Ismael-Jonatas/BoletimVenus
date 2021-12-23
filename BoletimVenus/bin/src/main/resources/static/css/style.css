@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
 body {
 	margin: 0;
 	min-height: 100vh;
@@ -8,7 +14,7 @@ body {
 	justify-content: space-between;
 }
 
-header, footer {
+header {
 	width: 100%;
 	background-color: #46C3FF;
 	background-color: #A7DDF7;
@@ -26,3 +32,27 @@ header, footer {
 	color:red; 
 	padding-bottom: 20px;
 }
+
+.form-cadastraraluno {
+	display: block;
+    width: 60%;
+    height: 100px;
+    margin-left: 35%;
+    margin-bottom: 10%;
+	
+}
+
+
+.form-cadastrarnota {
+	display: block;
+    width: 60%;
+    height: 320px;
+    margin-left: 35%;
+    margin-bottom: 10%;
+	
+}
+
+a {
+	text-decoration: none;
+}
+
