@@ -108,6 +108,7 @@ footer {
 	margin-top: 20px;
 }
 
+
 #direitos {
 	color: rgba(255,255,255);	
 	text-align: center;
@@ -170,4 +171,8 @@ footer {
 	.content-box {
 		margin:unset;
 	}
+}
+
+#nomeLogado{
+	color: black !important;
 }

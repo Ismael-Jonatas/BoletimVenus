@@ -42,7 +42,7 @@
 		<form th:action="@{/login/out}" class="form-inline my-2 my-lg-0">
 			<span th:if="${session.usuario != null}"> <span
 				th:text="${session.usuario.nome}"
-				style="margin-right: 15px; color: lightgray;"></span>
+				style="margin-right: 15px; color: lightgray;" id="nomeLogado" ></span>
 			</span>
 			<button class="btn-sair" type="submit">Sair</button>
 		</form>

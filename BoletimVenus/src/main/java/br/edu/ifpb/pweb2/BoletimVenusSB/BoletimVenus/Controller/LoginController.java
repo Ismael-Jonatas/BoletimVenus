@@ -39,7 +39,7 @@ public class LoginController {
 			modelAndView.setViewName("redirect:/home");
 		}else {
 			redirectAttts.addFlashAttribute("mensagem", "Login e/ou senha inválidos!");
-			modelAndView.setViewName("/login/from-login");
+			modelAndView.setViewName("redirect:/login");
 		}
 		
 		return modelAndView;

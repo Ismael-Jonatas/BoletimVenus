@@ -24,6 +24,12 @@
 				
 				<div class="card-body">
 					<form th:action="@{/login}" method="post" th:object="${usuario}">
+						<div th:if="${not #strings.isEmpty(mensagem)}"
+							th:utext="${mensagem} +'<button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;><span aria-hidden=&quot;true&quot;>&times;</span></button>'"
+							class="alert alert-danger alert-dismissible fade show" role="alert">
+			
+						</div>
+						
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
