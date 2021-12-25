@@ -49,9 +49,8 @@
 			</div>
 		</div>
 <!--		th:if="${estudante.getSituacao().getDescricao() == 'FN'}"-->
-		<div class="row">
+		<div class="row" th:if="*{situacao !=null && situacao.getDescricao()== 'FN'}" >
 			<div class="col-md-6 mb-3">
-				<label class="form-label">Nota Final</label>
 				<label class="form-label">Nota Final</label>
 				<input type="text" th:field="*{notaFinal}" class="form-control"/>
 			</div>

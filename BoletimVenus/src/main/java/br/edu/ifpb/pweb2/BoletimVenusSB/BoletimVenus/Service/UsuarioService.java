@@ -18,6 +18,7 @@ public class UsuarioService {
 	}
 	
 	public Usuario inserirOuAtualizar(Usuario usuario) {
+		usuario.setSenha(PasswordUtil.hashPassword(usuario.getSenha()));
 		Usuario usuarioInserido = this.usuarioRepository.save(usuario);
 		return usuarioInserido;
 	}
@@ -28,8 +29,22 @@ public class UsuarioService {
 	}
 	
 	
-	public Boolean verificaUsuarioLogado(String login, String senha) {
-		return this.usuarioRepository.existsByLoginAndSenha(login, senha);
+	public Usuario verificaUsuarioLogado(Usuario usuario) {
+		Usuario usuarioBD = this.usuarioRepository.findByEmail(usuario.getEmail());
+		boolean valido = false;
+		if (usuarioBD != null) {
+			if (PasswordUtil.checkPass(usuario.getSenha(), usuarioBD.getSenha())) {
+				valido = true;
+			}
+		}
+		return valido ? usuarioBD : null;
 	}
+
+	//coloca um adm conhecido no banco pela web
+	public void populabanco() {
+		Usuario usuario = new Usuario("admin","admin@administradores",PasswordUtil.hashPassword("123456"),true);
+		this.usuarioRepository.save(usuario);
+	}
+
 	
 }

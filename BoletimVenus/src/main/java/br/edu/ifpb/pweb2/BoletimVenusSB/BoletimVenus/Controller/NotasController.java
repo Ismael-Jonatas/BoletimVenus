@@ -40,7 +40,7 @@ public class NotasController {
 		return editView;
 	}
 
-	@GetMapping("/notas/{id}")
+	@GetMapping("/notas/deletar/{id}")
 	public String deleteAlunoNota (@PathVariable("id") Integer id) {
 		this.estudanteservice.apagarEstudante(id);
 		return "redirect:/notas";
