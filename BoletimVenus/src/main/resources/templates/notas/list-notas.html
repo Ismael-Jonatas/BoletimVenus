@@ -12,41 +12,43 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <div class="content-box-notas">
-        <table class="table table-hover table-bordered">
-            <tr class="table-primary text-center">
-                <th class="text-wrap">Nome</th>
-                <th class="text-wrap">Faltas</th>
-                <th class="text-wrap">1ª Nota</th>
-                <th class="text-wrap">2ª Nota</th>
-                <th class="text-wrap">3ª Nota</th>
-                <th class="text-wrap">Final</th>
-                <th class="text-wrap" colspan="2">Ações</th>
-            </tr>
-            <tr th:each="estudante : ${estudantes}">
-                <th th:text="${estudante.nome}"></th>
-                <td th:text="${estudante.faltas}"></td>
-                <td th:text="${estudante.nota1}"></td>
-                <td th:text="${estudante.nota2}"></td>
-                <td th:text="${estudante.nota3}"></td>
-                <td th:text="${estudante.notaFinal}"></td>
-                <td class="text-center">
-                    <a th:href="@{'/notas/editar/' + ${estudante.id}}">
-                        <button class="btn btn-secondary btn-sm">
-                            Editar
-                        </button>
-                    </a>
-                </td>
-                <td class="text-center">
-                    <a th:href="@{'/notas/deletar/' + ${estudante.id}}">
-                        <button class="btn btn-danger btn-sm">
-                            Remover
-                        </button>
-                    </a>
-                </td>
-            </tr>
-        </table>
-    </div>
+	<div class="form-editar">
+		<div class="content-box-notas">
+	    	<h1 style="font-size: 24px; margin: 5px auto 10px auto;">Cadastro de Notas</h1>
+        
+	        <table class="table table-hover" style="margin: 0">
+    	        <tr class="table-primary text-center">
+        	        <th class="text-wrap">Nome</th>
+	                <th class="text-wrap">Faltas</th>
+	                <th class="text-wrap">1ª Nota</th>
+	                <th class="text-wrap">2ª Nota</th>
+    	            <th class="text-wrap">3ª Nota</th>
+        	        <th class="text-wrap">Final</th>
+            	    <th class="text-wrap" colspan="2">Ações</th>
+	            </tr>
+    	        <tr th:each="estudante : ${estudantes}">
+	                <th th:text="${estudante.nome}"></th>
+    	            <td th:text="${estudante.faltas}"></td>
+        	        <td th:text="${estudante.nota1}"></td>
+            	    <td th:text="${estudante.nota2}"></td>
+                	<td th:text="${estudante.nota3}"></td>
+	                <td th:text="${estudante.notaFinal}"></td>
+    	            <td class="text-center">
+	                    <a th:href="@{'/notas/editar/' + ${estudante.id}}">
+    	                    <button style="width: unset" class="btn btn-secondary btn-sm">Editar</button>
+                    	</a>
+                	</td>
+                	<td class="text-center">
+	                    <a th:href="@{'/notas/deletar/' + ${estudante.id}}">
+    	                    <button style="width: unset" class="btn btn-danger btn-sm">Remover</button>
+                    	</a>
+	                </td>
+    	        </tr>
+        	</table>
+    	</div>
+	
+		<img id="sheyla" th:src="@{/images/Sheyla.png}">
+	</div>
 
     <footer th:replace="~{fragments/footer :: footer}"></footer>
 </body>

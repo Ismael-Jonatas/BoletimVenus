@@ -17,15 +17,20 @@ html,body{
 
 header {
 	width: 100%;
-	background-color: #46C3FF;
-	background-color: #A7DDF7;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #0D86AC;
 }
 
 .button-sair{
 	padding: 10px;
-	width: 95%;
 	display: flex;
     justify-content: flex-end;
+}
+
+.navbar-toggler {
+	width: unset;
 }
 
 .btn-sair{
@@ -34,21 +39,7 @@ header {
   	border-radius: 5px;
 	width: 60px;
 	padding: 2px;
-	
-	
 }
-
-.container-fluid {
-	position: absolute;
-	width: 100%;
-	height: 61px;
-	left: 0px;
-	top: 0px;
-	background: #0D86AC;
-
-}
-
-
 
 .msg-erro {
 	color:red; 
@@ -74,89 +65,99 @@ footer {
 	top: 40%;
 }
 
-.navbar-light .navbar-nav .nav-link {
-	color: rgba(255,255,255);	
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+	color: rgba(255,255,255);
 }
 
-.navbar-light .navbar-brand {
-	color: rgba(255,255,255);	
-	margin: 1%;
-	
-}
 .container{
-height: 100%;
-align-content: center;
+	height: 100%;
+	align-content: center;
 }
 
 .card{
-display: flex;
-height: auto;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
-display: flex;
+	display: flex;
+	height: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 400px;
+	background-color: rgba(0,0,0,0.5) !important;
+	display: flex;
 }
 
 .social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFC312;
+	font-size: 60px;
+	margin-left: 10px;
+	color: #FFC312;
 }
 
 .social_icon span:hover{
-color: white;
-cursor: pointer;
+	color: white;
+	cursor: pointer;
 }
 
 .card-header h3{
 	color:  #FFC312;
-
 }
 
 .card-header h3:hover{
-color: white;
+	color: white;
 }
 .social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
+	position: absolute;
+	right: 20px;
+	top: -45px;
+}
+
+.input-group {
+	margin-bottom: 10px;
+}
+
+.form-group:last-child {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 0;
+}
+
+.input-group-prepend{
+	display: flex;
 }
 
 .input-group-prepend span{
-width: 30px;
-background-color: #FFC312;
-color: black;
-border:0 !important;
+	width: 30px;
+	background-color: #FFC312;
+	color: black;
+	border:0 !important;
 }
 
 input:focus{
-outline: 0 0 0 0  !important;
-box-shadow: 0 0 0 0 !important;
-
+	outline: 0 0 0 0  !important;
+	box-shadow: 0 0 0 0 !important;
 }
 
 
 .login_btn{
-color: black;
-background-color: #FFC312;
-width: 100px;
+	color: black;
+	background-color: #FFC312;
+	width: 100px;
 }
 
 .login_btn:hover{
-color: black;
-background-color: white;
+	color: black;
+	background-color: white;
 }
 
 .links{
-color: white;
+	color: white;
 }
 
 .links a{
-margin-left: 4px;
+	margin-left: 4px;
 }
 
 .admin-check{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
 	background-color: white;
 	width: 85px;
 	border: 2px solid #FFC312;
@@ -170,4 +171,11 @@ margin-left: 4px;
 
 #direitos {
 	color: black;
+}
+
+.tituloSite #titulo1Header p {
+	color: #FFF;
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 24px;
 }

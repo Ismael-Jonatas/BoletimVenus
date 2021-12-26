@@ -4,9 +4,9 @@
 
 <div class="menu" > 	
 		
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand" th:href="@{/login}">Login</a>
+    <a th:if="${session.usuario == null}" class="navbar-brand" th:href="@{/login}">Login</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,7 +39,7 @@
 		</span>
 	</div>
 	<div class="button-sair">
-		<form th:action="@{/login/out}" class="form-inline my-2 my-lg-0">
+		<form th:if="${session.usuario != null}" th:action="@{/login/out}" class="form-inline my-2 my-lg-0">
 			<span th:if="${session.usuario != null}"> <span
 				th:text="${session.usuario.nome}"
 				style="margin-right: 15px; color: lightgray;" id="nomeLogado" ></span>

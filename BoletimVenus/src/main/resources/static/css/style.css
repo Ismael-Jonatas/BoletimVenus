@@ -32,14 +32,14 @@ body {
 
 header {
 	width: 100%;
-	background-color: #46C3FF;
-	background-color: #A7DDF7;
-	margin-bottom: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #0D86AC;
 }
 
 .button-sair{
 	padding: 10px;
-	width: 95%;
 	display: flex;
     justify-content: flex-end;
 }
@@ -81,34 +81,16 @@ button, .btn btn-primary {
     left: 50px;
 }
 
-
+.navbar-toggler {
+	width: unset;
+}
 
 #estudantes {
 	width: 49%	
 }
 
-
-.form-cadastrarnota {
-	display: block;
-    width: 60%;
-    height: 320px;
-    margin-left: 35%;
-    margin-bottom: 10%;
-
-}
-
 a {
 	text-decoration: none;
-}
-
-.container-fluid {
-	position: absolute;
-	width: 100%;
-	height: 61px;
-	left: 0px;
-	top: 0px;
-	background: #0D86AC;
-
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -145,7 +127,7 @@ footer {
 }
 
 .content-box {
-	margin-top: auto;
+	margin-top: 220px;
 	margin-bottom: auto;
 	width: 56%;
 	min-width: 290px;
@@ -159,9 +141,8 @@ footer {
 	box-shadow:0px 13px 40px #0000001f;
 }
 
-
 .content-box-notas{
-	margin-top: auto;
+	margin-top: 220px;
 	margin-bottom: auto;
 	width: auto;
 	min-width: 290px;
@@ -170,6 +151,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 10px;
 	box-shadow:0px 13px 40px #0000001f;
 }
 
@@ -194,6 +176,7 @@ footer {
 	width: 200px;
 	position: absolute;
 	z-index: -1;
+	top: 0;
 }
 
 @media (min-width: 700px) {
@@ -205,11 +188,18 @@ footer {
 		position: unset;
 	}
 	
-	.content-box {
+	.content-box, .content-box-notas {
 		margin:unset;
 	}
 }
 
 #nomeLogado{
 	color: black !important;
+}
+
+.tituloSite #titulo1Header p {
+	color: #FFF;
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 24px;
 }
