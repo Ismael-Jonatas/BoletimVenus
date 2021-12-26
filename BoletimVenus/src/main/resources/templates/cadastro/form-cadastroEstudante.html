@@ -16,10 +16,16 @@
 <!-- formulario -->
 
 <form class="form-cadastraraluno" th:action="@{/cadastro/adicionar}" th:object="${estudante}" method="post"> 
-	
 	<div class="content-box">
-		<h4> Cadastrando Aluno </h4>
+		<div class="erro-div">
+			<div th:if="${not #strings.isEmpty(mensagem)}"
+				th:utext="${mensagem}"
+				class="alert alert-danger alert-dismissible fade show" role="alert">
+			</div>
+		</div>
 
+		<h4> Cadastrando Aluno </h4>
+		
     	<input type="hidden"/>
     
 		<div class="row"> 

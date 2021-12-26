@@ -21,13 +21,13 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@NotBlank(message = "Campo obrigatório")
+	@NotBlank(message = "Campo nome é obrigatório")
 	private String nome;
 	
 	private boolean adminStatus;
-	@NotBlank(message = "Campo obrigatório")
+	@NotBlank(message = "Campo email é obrigatório")
 	private String email;
-	@NotBlank(message = "Campo obrigatório")
+	@NotBlank(message = "Campo senha é obrigatório")
 	@Size(min=3, message = "Senha deve ter no mínimo 3 caracteres")
 	private String senha;
 	

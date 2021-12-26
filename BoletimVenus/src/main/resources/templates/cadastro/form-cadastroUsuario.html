@@ -16,26 +16,20 @@
 					<div class="card">
 						<div class="card-body">
 							<form th:action="@{/cadastro-usuarios/cadastrar}" method="post" th:object="${usuario}">
-								<div th:if="${not #strings.isEmpty(mensagem)}"
-									th:utext="${mensagem} +'<button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;><span aria-hidden=&quot;true&quot;>&times;</span></button>'"
-									class="alert alert-danger alert-dismissible fade show" role="alert">
-					
+								<div class="erro-div">
+									<div th:if="${not #strings.isEmpty(mensagem)}"
+										th:utext="${mensagem}"
+										class="alert alert-danger alert-dismissible fade show" role="alert">
+									</div>
 								</div>
+
 								<div class="input-group form-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text"><i class="fas fa-user"></i></span>
 									</div>
 									<input th:field="*{nome}" type="text" class="form-control" placeholder="Nome">
 								</div>
-								<div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" >
-									<div class="alert alert-danger d-flex align-items-center" role="alert">
-									  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-									  <div>
-									    An example danger alert with an icon
-								  </div>
-								</div>
-								</div>
-								
+
 								<div class="input-group form-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text"><i class="fas fa-user"></i></span>

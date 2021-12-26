@@ -12,6 +12,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -26,10 +29,11 @@ public class Estudante {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@NotBlank(message="O campo nome é obrigatório!")
 	private String nome;
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-//	@Future(message="Data tem que ser futura")
+	@PastOrPresent(message="A data não pode ser futura!")
 	private Date dataNascimento;
 	private Integer faltas;
 	private Situacao situacao;

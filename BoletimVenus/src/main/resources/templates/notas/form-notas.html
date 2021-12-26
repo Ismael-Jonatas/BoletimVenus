@@ -14,55 +14,61 @@
 
 	<!-- formulario -->
 	<form class="form-cadastrarnota" th:action="@{/notas/adicionar}" th:object="${estudante}" method="post">
+		<div class="content-box">
+			<h4> Adicionando Nota dos Alunos </h4>
 
-		<h4> Adicionando Nota dos Alunos </h4>
-
-		<input type="hidden" th:field="*{id}"/>
-		<input type="hidden" th:field="*{nome}"/>
-		<input type="hidden" th:field="*{dataNascimento}"/>
-
-		<div class="row">
-			<div class="col-md-6 mb-3">
-				<label class="form-label">Faltas</label>
-				<input type="text" th:field="*{faltas}" class="form-control"/>
+			<input type="hidden" th:field="*{id}"/>
+			<input type="hidden" th:field="*{nome}"/>
+			<input type="hidden" th:field="*{dataNascimento}"/>
+	
+			<div class="row">
+				<div class="col-md-6 mb-3">
+					<label class="form-label">Faltas</label>
+					<input type="text" th:field="*{faltas}" class="form-control"/>
+				</div>
 			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-6 mb-3">
-				<label class="form-label">1ª Nota</label>
-				<input type="text" th:field="*{nota1}" class="form-control"/>
+	
+			<div class="row">
+				<div class="col-md-6 mb-3">
+					<label class="form-label">1ª Nota</label>
+					<input type="text" th:field="*{nota1}" class="form-control"/>
+				</div>
 			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-6 mb-3">
-				<label class="form-label">2ª Nota</label>
-				<input type="text" th:field="*{nota2}" class="form-control"/>
+	
+			<div class="row">
+				<div class="col-md-6 mb-3">
+					<label class="form-label">2ª Nota</label>
+					<input type="text" th:field="*{nota2}" class="form-control"/>
+				</div>
 			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-6 mb-3">
-				<label class="form-label">3ª Nota</label>
-				<input type="text" th:field="*{nota3}" class="form-control"/>
+	
+			<div class="row">
+				<div class="col-md-6 mb-3">
+					<label class="form-label">3ª Nota</label>
+					<input type="text" th:field="*{nota3}" class="form-control"/>
+				</div>
 			</div>
-		</div>
-<!--		th:if="${estudante.getSituacao().getDescricao() == 'FN'}"-->
-		<div class="row" th:if="*{situacao !=null && situacao.getDescricao()== 'FN'}" >
-			<div class="col-md-6 mb-3">
-				<label class="form-label">Nota Final</label>
-				<input type="text" th:field="*{notaFinal}" class="form-control"/>
+	<!--		th:if="${estudante.getSituacao().getDescricao() == 'FN'}"-->
+			<div class="row" th:if="*{situacao !=null && situacao.getDescricao()== 'FN'}" >
+				<div class="col-md-6 mb-3">
+					<label class="form-label">Nota Final</label>
+					<input type="text" th:field="*{notaFinal}" class="form-control"/>
+				</div>
 			</div>
+	
+			<div class="text-center">
+				<a th:href="@{/notas/adicionar}">
+					<button class="btn btn-primary">
+						Salvar
+					</button>
+				</a>
+			</div>
+		
+		
+		
+		
 		</div>
-
-		<div class="text-center">
-			<a th:href="@{/notas/adicionar}">
-				<button class="btn btn-primary">
-					Salvar
-				</button>
-			</a>
-		</div>
+		
 	</form>
 
 	<footer th:replace="~{fragments/footer :: footer}"></footer>

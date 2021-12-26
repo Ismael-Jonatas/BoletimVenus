@@ -11,8 +11,22 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	background: #BFE0FF;
+	background-image: url('/images/VenusBackground.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	justify-content: space-between;
 	
+}
+
+.recepcao-home{
+	margin-top: auto;
+	margin-bottom: auto;
+	height: auto;
+	width: auto;
+	background-color: white;
+	border: solid color white;
+	border-radius: 5px;
+	padding: 15px;
 }
 
 
@@ -24,9 +38,10 @@ header {
 }
 
 .button-sair{
-	width: 15%;
+	padding: 10px;
+	width: 95%;
 	display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .btn-sair{
@@ -36,6 +51,7 @@ header {
 	width: 60px;
 	padding: 2px;
 	
+	
 }
 .content {
 	display: flex;
@@ -43,6 +59,10 @@ header {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+}
+
+.content h2{
+	font-size: 45px;
 }
 
 .msg-erro {
@@ -125,7 +145,8 @@ footer {
 }
 
 .content-box {
-	margin-top: 230px;
+	margin-top: auto;
+	margin-bottom: auto;
 	width: 56%;
 	min-width: 290px;
 	max-width: 550px;
@@ -137,6 +158,21 @@ footer {
 	padding: 20px 15px;
 	box-shadow:0px 13px 40px #0000001f;
 }
+
+
+.content-box-notas{
+	margin-top: auto;
+	margin-bottom: auto;
+	width: auto;
+	min-width: 290px;
+	background-color: #FFF;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow:0px 13px 40px #0000001f;
+}
+
 
 .content-box .row {
 	display: flex;
@@ -152,6 +188,7 @@ footer {
 	width: 100%;
 	margin: 0;
 }
+
 
 #sheyla {
 	width: 200px;

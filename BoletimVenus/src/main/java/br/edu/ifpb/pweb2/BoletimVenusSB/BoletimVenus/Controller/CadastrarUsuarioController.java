@@ -29,9 +29,9 @@ public class CadastrarUsuarioController {
 	}
 	
 	@PostMapping("/cadastro-usuarios/cadastrar")
-	public ModelAndView adicionarNotas(ModelAndView modelAndView, @Valid Usuario usuario, Errors errors, RedirectAttributes redirectAttts) {
+	public ModelAndView adicionarUsuario(ModelAndView modelAndView, @Valid Usuario usuario, Errors errors, RedirectAttributes redirectAttts) {
 		if (null != errors && errors.getErrorCount() > 0) {
-			redirectAttts.addFlashAttribute("mensagem", "Campo Invalidos!");
+			redirectAttts.addFlashAttribute("mensagem", errors.getAllErrors().get(0).getDefaultMessage());
 			modelAndView.setViewName("redirect:/cadastro-usuarios");
 		}else {
 			this.usuarioService.inserirOuAtualizar(usuario);
@@ -39,5 +39,6 @@ public class CadastrarUsuarioController {
 		}
 		return modelAndView;
 	}
+	
 	
 }

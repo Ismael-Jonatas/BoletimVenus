@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Numans');
+
 
 html,body{
 	height: 100%;
@@ -13,36 +13,19 @@ html,body{
 	background-size: cover;
 	background-repeat: no-repeat;
 	justify-content: space-between;
-	font-family: 'Numans', sans-serif;
 }
 
 header {
 	width: 100%;
-	display: flex;
-  	background: #076585;  /* fallback for old browsers */
-  	background: -webkit-linear-gradient(to right, #fff, #076585);  /* Chrome 10-25, Safari 5.1-6 */
-  	background: linear-gradient(to right, #fff, #076585); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.tituloSite{
-	width: 65%;
-	display: flex;
-    justify-content: center;
-}
-
-#titulo1Header p {
-	margin: 0px; 
-	padding: 0px;
-	font-size: 35px;
-	color: black !important;
-	font-family: 'Brush Script MT', cursive;
-	margin-right: 20px;
+	background-color: #46C3FF;
+	background-color: #A7DDF7;
 }
 
 .button-sair{
-	width: 15%;
+	padding: 10px;
+	width: 95%;
 	display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .btn-sair{
@@ -52,23 +35,19 @@ header {
 	width: 60px;
 	padding: 2px;
 	
+	
 }
 
-footer {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  background: #076585;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fff, #076585);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fff, #076585); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.container-fluid {
+	position: absolute;
+	width: 100%;
+	height: 61px;
+	left: 0px;
+	top: 0px;
+	background: #0D86AC;
 
 }
 
-footer p {
-	margin: 0; 
-	font-size: 20px;
-	margin-right: 20px;
-}
 
 
 .msg-erro {
@@ -80,17 +59,43 @@ a {
 	text-decoration: none;
 }
 
+footer {
+	display:flex;
+	justify-content:center;
+	width: 100%;
+	height: 30px;
+	background: #0D86AC;
+	margin-top: 20px;
+}
+
+#direitos {
+	color: rgba(255,255,255)!important;	
+	text-align: center;
+	top: 40%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: rgba(255,255,255);	
+}
+
+.navbar-light .navbar-brand {
+	color: rgba(255,255,255);	
+	margin: 1%;
+	
+}
 .container{
 height: 100%;
 align-content: center;
 }
 
 .card{
-height: 280px;
+display: flex;
+height: auto;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
 background-color: rgba(0,0,0,0.5) !important;
+display: flex;
 }
 
 .social_icon span{
