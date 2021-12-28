@@ -35,7 +35,7 @@
 </div>	
 	<div class="tituloSite">
 		<span id="titulo1Header">
-			<p>Boletim Venus</p>
+			<a th:if="${session.usuario != null}" th:href="@{/home}">Boletim Venus</a>
 		</span>
 	</div>
 	<div class="button-sair">

@@ -93,7 +93,7 @@ a {
 	text-decoration: none;
 }
 
-.navbar-light .navbar-nav .nav-link {
+.navbar-light .navbar-nav .nav-link , #titulo1Header a {
 	color: rgba(255,255,255);	
 }
 
