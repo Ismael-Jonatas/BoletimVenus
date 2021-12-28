@@ -24,35 +24,35 @@
 			<div class="row">
 				<div class="col-md-6 mb-3">
 					<label class="form-label">Faltas</label>
-					<input type="text" th:field="*{faltas}" class="form-control"/>
+					<input type="number" min = "0" th:field="*{faltas}" class="form-control"/>
 				</div>
 			</div>
 	
 			<div class="row">
 				<div class="col-md-6 mb-3">
 					<label class="form-label">1ª Nota</label>
-					<input type="text" th:field="*{nota1}" class="form-control"/>
+					<input type="number" min = "0" max = "100" th:field="*{nota1}" class="form-control"/>
 				</div>
 			</div>
 	
 			<div class="row">
 				<div class="col-md-6 mb-3">
 					<label class="form-label">2ª Nota</label>
-					<input type="text" th:field="*{nota2}" class="form-control"/>
+					<input type="number" min = "0" max = "100" th:field="*{nota2}" class="form-control"/>
 				</div>
 			</div>
 	
 			<div class="row">
 				<div class="col-md-6 mb-3">
 					<label class="form-label">3ª Nota</label>
-					<input type="text" th:field="*{nota3}" class="form-control"/>
+					<input type="number" min = "0" max = "100" th:field="*{nota3}" class="form-control"/>
 				</div>
 			</div>
 	<!--		th:if="${estudante.getSituacao().getDescricao() == 'FN'}"-->
 			<div class="row" th:if="*{situacao !=null && situacao.getDescricao()== 'FN'}" >
 				<div class="col-md-6 mb-3">
 					<label class="form-label">Nota Final</label>
-					<input type="text" th:field="*{notaFinal}" class="form-control"/>
+					<input type="number" min = "0" max = "100" th:field="*{notaFinal}" class="form-control"/>
 				</div>
 			</div>
 	

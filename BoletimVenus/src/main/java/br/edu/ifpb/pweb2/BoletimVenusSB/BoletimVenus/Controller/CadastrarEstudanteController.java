@@ -41,13 +41,15 @@ public class CadastrarEstudanteController {
 	
 	@PostMapping("/cadastro/adicionar")
 	public ModelAndView adicionarEstudante(ModelAndView modelAndView, @Valid Estudante estudante, Errors errors, RedirectAttributes redirectAttts) {
+		
 		if (null != errors && errors.getErrorCount() > 0) {
 			redirectAttts.addFlashAttribute("mensagem", errors.getAllErrors().get(0).getDefaultMessage());
 			modelAndView.setViewName("redirect:/cadastro");
 		}else {
-			CadastroEstudante(estudante);
+			//CadastroEstudante(estudante);
 			this.estudanteservice.inserirOuAtualizar(estudante);
 			modelAndView.setViewName("redirect:/cadastro");
+			
 		}
 		return modelAndView;
 	}

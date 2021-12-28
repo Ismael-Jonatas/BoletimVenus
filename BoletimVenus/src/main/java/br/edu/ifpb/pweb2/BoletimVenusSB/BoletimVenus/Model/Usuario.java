@@ -6,7 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import lombok.EqualsAndHashCode;
@@ -21,10 +23,12 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@NotBlank(message = "Campo nome é obrigatório")
+	//permitir apenas string
+	@Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$", message = "Apenas letras são permitidas no campo nome!")
+	@NotBlank(message = "Campo nome é obrigatório!")
 	private String nome;
-	
 	private boolean adminStatus;
+	@Email(message = "O email não é valido!")
 	@NotBlank(message = "Campo email é obrigatório")
 	private String email;
 	@NotBlank(message = "Campo senha é obrigatório")

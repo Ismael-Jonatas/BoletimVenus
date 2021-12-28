@@ -3,13 +3,18 @@ package br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Model.Estudante;
+import br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Model.Usuario;
 import br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Service.EstudanteService;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+
+import javax.validation.Valid;
 
 @Controller
 public class EditarController {
@@ -27,12 +32,27 @@ public class EditarController {
 	}
 
 	@PostMapping("/editar")
-	public String postFromEditar(@ModelAttribute Estudante estudante) {
-		Estudante estudanteEdidato = this.estudanteservice.getEstudanteId(estudante.getId());
-		setAtributesEstudantes(estudante, estudanteEdidato);
-		this.estudanteservice.inserirOuAtualizar(estudante);
-		return "redirect:/relatorio";
-	}
+	public ModelAndView postFromEditar(ModelAndView modelAndView, @Valid Estudante estudante, Errors errors, RedirectAttributes redirectAttts) {
+		if (estudante.getId() != null) {
+			Estudante estudanteEdidato = this.estudanteservice.getEstudanteId(estudante.getId());
+			
+			setAtributesEstudantes(estudante, estudanteEdidato);
+			if (null != errors && errors.getErrorCount() > 0) {
+				redirectAttts.addFlashAttribute("mensagem", errors.getAllErrors().get(0).getDefaultMessage());
+				modelAndView.setViewName("redirect:/editar");
+			}else {
+				this.estudanteservice.inserirOuAtualizar(estudante);
+				modelAndView.setViewName("redirect:/relatorio");
+			}
+			
+			return modelAndView;
+		}else {
+			redirectAttts.addFlashAttribute("mensagem", "Selecione um Aluno!");
+		}
+
+
+		return modelAndView;
+}
 
 	public void setAtributesEstudantes(Estudante estudante, Estudante estudanteEdidato) {
 		estudante.setFaltas(estudanteEdidato.getFaltas());
@@ -43,3 +63,4 @@ public class EditarController {
 		estudante.setNotaFinal(estudanteEdidato.getNotaFinal());
 	}
 }
+

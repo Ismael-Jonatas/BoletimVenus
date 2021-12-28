@@ -15,10 +15,14 @@
 
 	
 	<form class="form-editar" th:action="@{/editar}" th:object="${estudante}" method="post">
-
 		<div class="content-box">
 			<h4> Editando Aluno </h4>
-			
+			<div class="erro-div">
+				<div th:if="${not #strings.isEmpty(mensagem)}"
+					th:utext="${mensagem}"
+					class="alert alert-danger alert-dismissible fade show" role="alert">
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-md-6 mb-3">
 					<label class="form-label" for="estudantes">Estudante</label>

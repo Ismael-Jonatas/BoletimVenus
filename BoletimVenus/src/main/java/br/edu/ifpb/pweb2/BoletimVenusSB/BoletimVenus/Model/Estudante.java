@@ -11,10 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -29,16 +31,24 @@ public class Estudante {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@NotBlank(message="O campo nome é obrigatório!")
+	@NotBlank(message = "Campo nome é obrigatório!")
+	//permitir apenas string
+	@Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$", message = "Apenas letras são permitidas no campo nome!")
 	private String nome;
+	@NotNull(message = "Insira uma data valida!")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@PastOrPresent(message="A data não pode ser futura!")
 	private Date dataNascimento;
 	private Integer faltas;
 	private Situacao situacao;
+	@DecimalMin("0.00") 
+	@DecimalMax("99999999999999999.00")
 	private BigDecimal nota1;
+	@DecimalMin("0.00") 
+	@DecimalMax("99999999999999999.00")
 	private BigDecimal nota2;
+	
 	private BigDecimal nota3;
 	private BigDecimal ntFinal;
 	
@@ -46,6 +56,7 @@ public class Estudante {
 		
 	}
 
+	
 	public Estudante (String nome, Date dataNascimento) {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;

@@ -1,4 +1,6 @@
-package br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Controller;
+//Não está sendo usado
+
+/*package br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -57,3 +59,4 @@ public class EstudanteController {
 	
 
 }
+*/
