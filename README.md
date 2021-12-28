@@ -1,14 +1,10 @@
 # BoletimVenus
-Projeto de Pweb2, se trata de um caderneta de notas de estudante, java, springBoot, thymeleaf, maven
+BoletimVenus se trata de um caderneta de notas de estudante, construído em java utilizando springBoot, thymeleaf e maven.
 
-CRIADORES:
+**Criadores**:
 
-ISMAEL JÔNATAS
-
-WILLMA TAYANNE
-
-EDUARDO PORTO
-
-DIEGO FRAZÃO
-
-LUCIANO DE CARVALHO
+- Ismael Jônatas
+- Willma Tayanne
+- Eduardo Porto
+- Diego Frazão
+- Luciano de Carvalho
