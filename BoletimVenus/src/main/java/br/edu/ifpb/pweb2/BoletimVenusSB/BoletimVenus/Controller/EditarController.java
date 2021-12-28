@@ -33,13 +33,14 @@ public class EditarController {
 
 	@PostMapping("/editar")
 	public ModelAndView postFromEditar(ModelAndView modelAndView, @Valid Estudante estudante, Errors errors, RedirectAttributes redirectAttts) {
-		if (estudante.getId() != null) {
+		if (estudante != null) {
 			Estudante estudanteEdidato = this.estudanteservice.getEstudanteId(estudante.getId());
 			
 			setAtributesEstudantes(estudante, estudanteEdidato);
 			if (null != errors && errors.getErrorCount() > 0) {
 				redirectAttts.addFlashAttribute("mensagem", errors.getAllErrors().get(0).getDefaultMessage());
 				modelAndView.setViewName("redirect:/editar");
+				
 			}else {
 				this.estudanteservice.inserirOuAtualizar(estudante);
 				modelAndView.setViewName("redirect:/relatorio");

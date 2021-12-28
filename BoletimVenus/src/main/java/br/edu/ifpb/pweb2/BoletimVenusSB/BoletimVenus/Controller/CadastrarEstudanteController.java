@@ -48,6 +48,7 @@ public class CadastrarEstudanteController {
 		}else {
 			//CadastroEstudante(estudante);
 			this.estudanteservice.inserirOuAtualizar(estudante);
+			redirectAttts.addFlashAttribute("mensagem", "Aluno Cadastrado");
 			modelAndView.setViewName("redirect:/cadastro");
 			
 		}

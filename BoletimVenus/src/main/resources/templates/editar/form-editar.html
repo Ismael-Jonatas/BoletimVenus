@@ -26,8 +26,8 @@
 			<div class="row">
 				<div class="col-md-6 mb-3">
 					<label class="form-label" for="estudantes">Estudante</label>
-					<select class="form-control" id="estudantes" th:field="*{id}">
-						<option value="Selecione">Selecione</option>
+					<select required class="form-control" id="estudantes" th:field="*{id}">
+						<option value="">Selecione</option>
 						<option th:each="estudante : ${estudantes}" th:value="${estudante.id}" th:text="${estudante.nome}"></option>
 					</select>
 				</div>

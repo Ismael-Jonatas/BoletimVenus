@@ -35,6 +35,7 @@ public class CadastrarUsuarioController {
 			modelAndView.setViewName("redirect:/cadastro-usuarios");
 		}else {
 			this.usuarioService.inserirOuAtualizar(usuario);
+			redirectAttts.addFlashAttribute("mensagem", "Usuario Cadastrado");
 			modelAndView.setViewName("redirect:/login");
 		}
 		return modelAndView;

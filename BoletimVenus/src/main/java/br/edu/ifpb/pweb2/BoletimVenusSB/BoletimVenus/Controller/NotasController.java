@@ -76,7 +76,19 @@ public class NotasController {
 		if (nota1 == null || nota2 == null || nota3 == null || faltas == null) {
 			estudante.setSituacao(Situacao.MT);
 		}
-		else if (nota1 != null && nota2 != null && nota3 != null && faltas != null) {
+		else if (ntFinal != null) {
+			BigDecimal finalAux1 = (media.multiply(new BigDecimal("60")));
+			BigDecimal finalAux2 = (ntFinal.multiply(new BigDecimal("40")));
+			BigDecimal finalAux = (finalAux1.add(finalAux2).divide(new BigDecimal("100")));
+
+			if (finalAux.compareTo(new BigDecimal("50") )  >= 0 ){
+				estudante.setSituacao(Situacao.AP);
+			}
+			else {
+				estudante.setSituacao(Situacao.RP);
+			}
+		}
+		else  {
 			if (faltas >= FALTAS) {
 				estudante.setSituacao(Situacao.RF);
 			}
@@ -85,18 +97,6 @@ public class NotasController {
 			}
 			else if (media.compareTo(new BigDecimal(REPROVACAO)) >= 0) {
 				estudante.setSituacao(Situacao.FN);
-			}
-			else {
-				estudante.setSituacao(Situacao.RP);
-			}
-		}
-		else if (nota1 != null && nota2 != null && nota3 != null && faltas != null && ntFinal != null){
-			BigDecimal finalAux1 = (media.multiply(new BigDecimal("60")));
-			BigDecimal finalAux2 = (ntFinal.multiply(new BigDecimal("40")));
-			BigDecimal finalAux = (finalAux1.add(finalAux2).divide(new BigDecimal("100")));
-
-			if (finalAux.compareTo(new BigDecimal("5.0") )  >= 0 ){
-				estudante.setSituacao(Situacao.AP);
 			}
 			else {
 				estudante.setSituacao(Situacao.RP);
