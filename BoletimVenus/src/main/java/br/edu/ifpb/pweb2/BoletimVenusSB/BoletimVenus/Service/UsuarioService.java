@@ -40,9 +40,19 @@ public class UsuarioService {
 		return valido ? usuarioBD : null;
 	}
 
+	public boolean verificaEmailCadastrado(Usuario usuario) {
+		Usuario usuarioBD = this.usuarioRepository.findByEmail(usuario.getEmail());
+		boolean emailCadastrado = false;
+		if (usuarioBD != null) {
+			emailCadastrado = true;
+		}
+		
+		return emailCadastrado;
+	}
+	
 	//coloca um adm conhecido no banco pela web
 	public void populabanco() {
-		Usuario usuario = new Usuario("admin","admin@administradores",PasswordUtil.hashPassword("123456"),true);
+		Usuario usuario = new Usuario("admin","admin@administradores.com",PasswordUtil.hashPassword("123456"),true);
 		this.usuarioRepository.save(usuario);
 	}
 

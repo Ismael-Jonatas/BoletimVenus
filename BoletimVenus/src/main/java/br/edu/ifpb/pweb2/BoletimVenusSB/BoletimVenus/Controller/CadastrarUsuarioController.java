@@ -20,7 +20,7 @@ import br.edu.ifpb.pweb2.BoletimVenusSB.BoletimVenus.Service.UsuarioService;
 public class CadastrarUsuarioController {
 
 	@Autowired
-	private UsuarioService usuarioService ;
+	private UsuarioService usuarioService;
 	
 	@GetMapping("/cadastro-usuarios")
 	public String getFromCadastro(Model model) {
@@ -30,14 +30,21 @@ public class CadastrarUsuarioController {
 	
 	@PostMapping("/cadastro-usuarios/cadastrar")
 	public ModelAndView adicionarUsuario(ModelAndView modelAndView, @Valid Usuario usuario, Errors errors, RedirectAttributes redirectAttts) {
-		if (null != errors && errors.getErrorCount() > 0) {
-			redirectAttts.addFlashAttribute("mensagem", errors.getAllErrors().get(0).getDefaultMessage());
-			modelAndView.setViewName("redirect:/cadastro-usuarios");
+		
+		if(this.usuarioService.verificaEmailCadastrado(usuario) != true) {
+			if (null != errors && errors.getErrorCount() > 0) {
+				redirectAttts.addFlashAttribute("mensagem", errors.getAllErrors().get(0).getDefaultMessage());
+				modelAndView.setViewName("redirect:/cadastro-usuarios");
+			}else {
+				this.usuarioService.inserirOuAtualizar(usuario);
+				redirectAttts.addFlashAttribute("mensagem", "Usuario Cadastrado");
+				modelAndView.setViewName("redirect:/login");
+			}
 		}else {
-			this.usuarioService.inserirOuAtualizar(usuario);
-			redirectAttts.addFlashAttribute("mensagem", "Usuario Cadastrado");
-			modelAndView.setViewName("redirect:/login");
+			redirectAttts.addFlashAttribute("mensagem", "Ops! - Email já Cadastrado!");
+			modelAndView.setViewName("redirect:/cadastro-usuarios");
 		}
+		
 		return modelAndView;
 	}
 	
