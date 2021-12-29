@@ -1,5 +1,5 @@
 # BoletimVenus
-BoletimVenus se trata de um caderneta de notas de estudante, construído em java utilizando springBoot, thymeleaf e maven.
+BoletimVenus se trata de uma caderneta de notas de estudantes, construída em java utilizando SpringBoot, Thymeleaf e Maven.
 
 **Criadores**:
 
